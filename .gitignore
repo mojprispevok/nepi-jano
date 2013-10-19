@@ -1,0 +1,6 @@
+# Intellij
+.idea/
+*.iml
+
+# ignore Kango generated local extensions, leave distributions
+output/*/
