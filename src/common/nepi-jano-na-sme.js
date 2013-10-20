@@ -85,10 +85,7 @@ var sme = (function() {
                     //get article id from URL
                     var url = 'http://s.sme.sk/export/phone/html/?vf=' + articleId;
                     var xhr = new XMLHttpRequest();
-                    xhr.onreadystatechange = handleStateChange;
-                    xhr.open("GET", url, true);
-                    xhr.send();
-                    function handleStateChange() {
+                    xhr.onreadystatechange = function() {
                         if (xhr.readyState === 4) {
                             //$('#article-box #itext_content').empty();
                             var data = xhr.responseText;
@@ -107,8 +104,9 @@ var sme = (function() {
                             }, 500);
 
                         }
-                    }
-
+                    };
+                    xhr.open("GET", url, true);
+                    xhr.send();
                 }
             }
         } catch (e) {
@@ -134,14 +132,19 @@ var sme = (function() {
                     $('#article-box #itext_content').attr('style', '-webkit-filter: blur(8px);');
                     //get article id from URL
                     var url = 'http://s.sme.sk/export/phone/html/?cf=' + articleId;
-                    var xhr = new XMLHttpRequest();
-                    xhr.onreadystatechange = handleStateChange;
-                    xhr.open("GET", url, true);
-                    xhr.send();
-                    function handleStateChange() {
-                        if (xhr.readyState === 4) {
+                    kango.console.log("loading article from: " + url);
+
+                    var details = {
+                        url: url,
+                        method: 'GET',
+                        async: true
+                    };
+                    kango.xhr.send(details, function(ret) {
+                        if (ret.status == 200 && ret.response != null) {
+                            var data = ret.response;
+
                             //$('#article-box #itext_content').empty();
-                            var data = xhr.responseText;
+
                             //remove javascript from response
                             data = data.replace(/<script/g, '<!--script');
                             data = data.replace(/<\/script/g, '</script--');
@@ -164,8 +167,10 @@ var sme = (function() {
                             }, 500);
 
                         }
-                    }
-
+                        else { // something went wrong
+                            kango.console.log('error to get data from URL: ' + url);
+                        }
+                    });
                 }
             }
         } catch (e) {
