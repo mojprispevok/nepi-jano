@@ -28,7 +28,6 @@ var sme = (function() {
         } else {
             return results[1];
         }
-        return false;
     };
 
     /**
@@ -41,8 +40,7 @@ var sme = (function() {
         } else {
             return false;
         }
-        return false;
-    }
+    };
     /**
      * Get video ID
      */
@@ -53,19 +51,18 @@ var sme = (function() {
         } else {
             return false;
         }
-        return false;
-    }
+    };
     /**
      * Init app
      */
     var init = function() {
         //video
-        if (/tv.sme.sk\//i.test(document.location)) {
+        if (/tv.sme.sk\//i.test(document.location.href)) {
             //console.log('Nepi Jano: video');
             allowVideo();
         }
         //article
-        else if (/sme.sk\/c\//i.test(document.location)) {
+        else if (/sme.sk\/c\//i.test(document.location.href)) {
             //console.log('Nepi Jano: article');
             allowArticle();
         }
