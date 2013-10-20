@@ -1,9 +1,6 @@
 {
     "content_scripts": [
-        "nepi-jano-na-sme.js",
-        "nepi-jano-na-hn.js",
-        "nepi-jano-na-etrend.js"
-
+        "nepi-jano-na-sme.js"
     ],
     "description": "This extension allows to read paid content on www.sme.sk, www.hnonline.sk and www.etrend.sk.",
     "creator": "Miroslav Magda, http://blog.ejci.net",
