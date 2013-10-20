@@ -7,11 +7,11 @@ Nepi Jano! is a Chromium/Google Chrome/Firefox/Safari/Opera extension that allow
 * this extension is written with (Kango - cross-browser extension framework)[http://kangoextensions.com/]
 * the main code resides in /src/common/nepi-jano*.js files
 * to produce installation bundles for different browsers you need to:
-** install Python 2.7 (http://www.python.org/download/)
-** download (Kango here)[http://kangoextensions.com/kango/kango-framework-latest.zip] and extract the archive with framework to any directory
-** get source code from https://github.com/mojprispevok/nepi-jano/tree/kango-extension (git clone https://github.com/mojprispevok/nepi-jano.git)
-** in nepi-jano folder execude: python2 %KANGO_FOLDER%/kango.py build ./
-** extensions will be generated to nepi-jano/output folder
+  * install Python 2.7 (http://www.python.org/download/)
+  * download (Kango here)[http://kangoextensions.com/kango/kango-framework-latest.zip] and extract the archive with framework to any directory
+  * get source code from https://github.com/mojprispevok/nepi-jano/tree/kango-extension (git clone https://github.com/mojprispevok/nepi-jano.git)
+  * in nepi-jano folder execude: python2 %KANGO_FOLDER%/kango.py build ./
+  * extensions will be generated to nepi-jano/output folder
 
 # Installation
 
