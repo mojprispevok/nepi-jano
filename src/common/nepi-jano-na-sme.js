@@ -57,12 +57,12 @@ var sme = (function() {
      */
     var init = function() {
         //video
-        if (/tv.sme.sk\//i.test(document.location.href)) {
+        if (/tv\.sme\.sk\//i.test(document.location.href)) {
             //console.log('Nepi Jano: video');
             allowVideo();
         }
         //article
-        else if (/sme.sk\/c\//i.test(document.location.href)) {
+        else if (/sme\.sk\/c\//i.test(document.location.href)) {
             //console.log('Nepi Jano: article');
             allowArticle();
         }
