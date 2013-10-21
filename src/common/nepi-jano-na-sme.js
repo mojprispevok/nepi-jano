@@ -57,16 +57,29 @@ var sme = (function() {
      * Init app
      */
     var init = function() {
-        //video
-        if (/tv\.sme\.sk\//i.test(document.location.href)) {
-            //console.log('Nepi Jano: video');
-            allowVideo();
-        }
-        //article
-        else if (/sme\.sk\/c\//i.test(document.location.href)) {
-            //console.log('Nepi Jano: article');
-            allowArticle();
-        }
+        // hide piano bar
+        kango.invokeAsync('kango.storage.getItem', 'nepi-jano-toolbar', function(enabled) {
+            if (enabled) {
+                setTimeout(function() {
+                    $('#pianoMediaBar').hide();
+                }, 500);
+            }
+        });
+
+        kango.invokeAsync('kango.storage.getItem', 'nepi-jano', function(enabled) {
+            if (enabled) {
+                //video
+                if (/tv\.sme\.sk\//i.test(document.location.href)) {
+                    //console.log('Nepi Jano: video');
+                    allowVideo();
+                }
+                //article
+                else if (/sme\.sk\/c\//i.test(document.location.href)) {
+                    //console.log('Nepi Jano: article');
+                    allowArticle();
+                }
+            }
+        });
     };
     /**
      * Check if video is blocked.

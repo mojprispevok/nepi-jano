@@ -2,11 +2,21 @@
     "content_scripts": [
         "nepi-jano-na-sme.js"
     ],
-    "description": "This extension allows to read paid content on www.sme.sk, www.hnonline.sk and www.etrend.sk.",
-    "creator": "Miroslav Magda, http://blog.ejci.net",
+    "description": "This extension allows to read paid content on www.sme.sk.",
+    "creator": "Miroslav Magda (http://blog.ejci.net), mojprispevok",
     "background_scripts": [
     ],
-    "homepage_url": "https://bitbucket.org/miroslavmagda/nepi-jano",
+    "browser_button": {
+        "icon": "icons/button.png",
+        "tooltipText": "Nepi Jano! nastavenia",
+        "caption": "Nepi Jano!",
+        "popup": {
+            "url": "popup.html",
+            "width": 600,
+            "height": 520
+        }
+    },
+    "homepage_url": "https://github.com/mojprispevok/nepi-jano",
     "version": "0.10.0",
     "name": "Nepi Jano!"
 }
