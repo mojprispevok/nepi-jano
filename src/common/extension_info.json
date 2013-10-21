@@ -1,6 +1,7 @@
 {
     "content_scripts": [
-        "nepi-jano-na-sme.js"
+        "nepi-jano-na-sme.js",
+        "smeti-na-sme.js"
     ],
     "description": "This extension allows to read paid content on www.sme.sk.",
     "creator": "Miroslav Magda (http://blog.ejci.net), mojprispevok",
@@ -12,11 +13,11 @@
         "caption": "Nepi Jano!",
         "popup": {
             "url": "popup.html",
-            "width": 600,
-            "height": 520
+            "width": 400,
+            "height": 400
         }
     },
     "homepage_url": "https://github.com/mojprispevok/nepi-jano",
-    "version": "0.10.1",
+    "version": "0.11.0",
     "name": "Nepi Jano!"
 }

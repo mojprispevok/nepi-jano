@@ -20,6 +20,9 @@ KangoAPI.onReady(function() {
     initBoolean('nepi-jano', true);
     initBoolean('nepi-jano-toolbar', false);
 
+    initBoolean('smeti', false);
+    initBoolean('smeti-sport', true);
+
     $('#popup-close').click(function(event) {
         KangoAPI.closeWindow()
     });
