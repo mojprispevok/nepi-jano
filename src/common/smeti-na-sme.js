@@ -22,7 +22,6 @@ var patterns = {
 };
 
 kango.invokeAsync('kango.storage.getItem', 'smeti', function(cfg) {
-
     var jeNaVyhodenie = function(href) {
         for (var key in patterns) {
             if (key==='vzdy' || cfg[key]) {

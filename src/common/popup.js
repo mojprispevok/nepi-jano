@@ -4,21 +4,23 @@ function initBoolean(id, defaultValue, group) {
     var v;
     if (group) {
         v = kango.storage.getItem(group);
-        v = v[id];
+        if (v && v.hasOwnProperty(id)) {
+            v = v[id];
+        } else {
+            v = null;
+        }
     } else {
         v = kango.storage.getItem(id);
     }
-//    console.log(v);
     if (v === null) {
         v = defaultValue;
     }
     el.prop('checked', v);
 
     $(el).click(function(event) {
-//        console.log($(this).is(':checked'));
         if (group) {
             var cfg = kango.storage.getItem(group);
-            if (typeof cfg !== 'object') {
+            if (!cfg || typeof cfg !== 'object') {
                 cfg = {};
             }
             cfg[id] = $(this).is(':checked');
@@ -30,14 +32,18 @@ function initBoolean(id, defaultValue, group) {
 }
 
 KangoAPI.onReady(function() {
-
-
     initBoolean('nepi-jano', true);
     initBoolean('nepi-jano-toolbar', false);
 
-    initBoolean('smeti', false, 'smeti');
-    $("[id^='smeti-'").each(function(index, el) {
-        initBoolean(el.id, true, 'smeti');
+    var defaultSmeti = {
+        smeti: false,
+        'smeti-tlacovespravy': true
+
+    };
+    initBoolean('smeti', defaultSmeti, 'smeti');
+
+    $("[id^='smeti-']").each(function(index, el) {
+        initBoolean(el.id, false, 'smeti');
     });
 
     $('#popup-close').click(function(event) {
