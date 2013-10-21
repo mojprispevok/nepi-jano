@@ -36,7 +36,9 @@ KangoAPI.onReady(function() {
     initBoolean('nepi-jano-toolbar', false);
 
     initBoolean('smeti', false, 'smeti');
-    initBoolean('smeti-sport', true, 'smeti');
+    $("[id^='smeti-'").each(function(index, el) {
+        initBoolean(el.id, true, 'smeti');
+    });
 
     $('#popup-close').click(function(event) {
         KangoAPI.closeWindow()
