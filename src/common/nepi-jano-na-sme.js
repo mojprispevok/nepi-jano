@@ -3,6 +3,7 @@
 // @include http://*.sme.sk/*
 // @require jquery-2.0.0.min.js
 // ==/UserScript==
+
 var $ = window.$.noConflict(true);
 
 /**
@@ -102,7 +103,6 @@ var sme = (function() {
                             var t = setTimeout(function() {
                                 $('.video').attr('style', '-webkit-filter: blur(0px);');
                             }, 500);
-
                         }
                     };
                     xhr.open("GET", url, true);
@@ -160,7 +160,7 @@ var sme = (function() {
                                 //change s.sme.sk/export/phone/?c=XXX to www.sme.sk/c/XXX/
                                 var url = $(this).attr('href');
                                 var cId = utils.urlParam('c', $(this).attr('href'));
-                                if (/s.sme.sk\//i.test(url) && cId) {
+                                if (/s\.sme\.sk\//i.test(url) && cId) {
                                     $(this).attr('href', 'http://www.sme.sk/c/' + cId + '/');
                                 }
                             });
