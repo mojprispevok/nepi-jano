@@ -1,7 +1,8 @@
 {
     "content_scripts": [
         "nepi-jano-na-sme.js",
-        "smeti-na-sme.js"
+        "smeti-na-sme.js",
+        "smeti-na-pravde.js"
     ],
     "description": "This extension allows to read paid content on www.sme.sk.",
     "creator": "Miroslav Magda (http://blog.ejci.net), mojprispevok",
