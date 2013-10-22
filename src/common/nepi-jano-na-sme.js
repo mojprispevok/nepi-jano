@@ -123,7 +123,7 @@ var sme = (function() {
                 }
             }
         } catch (e) {
-            console.error('Nepi Jano: error', e);
+            kango.console.log('Nepi Jano error: ' + e);
         }
 
     };
@@ -189,7 +189,7 @@ var sme = (function() {
                 }
             }
         } catch (e) {
-            console.error('Nepi Jano: error', e);
+            kango.console.log('Nepi Jano error: ' + e);
         }
 
     };
