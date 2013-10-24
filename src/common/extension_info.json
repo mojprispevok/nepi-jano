@@ -15,7 +15,7 @@
         "popup": {
             "url": "popup.html",
             "width": 400,
-            "height": 400
+            "height": 600
         }
     },
     "homepage_url": "https://github.com/mojprispevok/nepi-jano",
